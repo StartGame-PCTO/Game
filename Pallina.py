@@ -14,3 +14,9 @@ class Pallina():
 
     def setY(self,y):
         self.centroY = self.centroY + (y)
+    
+    def getX(self):
+        return self.centroX
+    
+    def getY(self):
+        return self.centroY

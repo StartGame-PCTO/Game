@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import pygame
 import math
+import Pallina as p
 TEN = 10
 
 def convertiX(x):
@@ -10,106 +11,87 @@ def convertiX(x):
 def convertiY(y):
     return math.floor(y/TEN)
 
-def colorDetec():
-    level = [
-    "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-    "++++++++++++++++++++++++++++++RRoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-    "++++++++++++++++++++++++++++++RRoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-    "++++++++++++++++++++++++++++++RRooooooooooooooooooooooooooooooRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRoooo",
-    "++++++++++++++++++++++++++++++RRooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++RRooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "RRRRRRRRRRRRRRRRRRRR++++++++++RRooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR++++++++++RRRRRRRRRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRR++++++++++++++++++++++++++++++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRR++++++++++++++++++++++++++++++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRR++++++++++++++++++++++++++++++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRR++++++++++++++++++++++++++++++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRooRR++++++++++++++++++++++++++++++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++RRRRRR++++++++++RRRRRRRRRRRRRRRRRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++++++++++++++++++RRooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++++++++++++++++++RRooooooooooooooRR++++++++++RRRRRRRRRR++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++++++++++++++++++RRooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++++++++++++++++++RRooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRR++++++++++++++++++++++++++RRooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRRRRRRRRRRRRRRRRRRRRRoooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRoooooooooooooooooooooooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRoooooooooooooooooooooooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRoooooooooooooooooooooooo",
-    "ooooooooooooooRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR++++++++++RRoooooooooooooooooooooooo",
-    "ooooooooooooooRR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRRRRRRRRRRRRRRRRRRRRRoooo",
-    "ooooooooooooooRR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR++++++++++RRRRRRRRRR++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooRR++++++++++RRooooooooooooooooooooooooooooooooooRR++++++++++RRooooooRR++++++++++RRoooo",
-    "ooooooooooooooRRRRRRRRRRRRRRooooooooooooooooooooooooooooooooooRRRRRRRRRRRRRRooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRoooo",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooRR++++++++++RRoooo",
-    "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RRoooo",
-    "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRoooo",
-    "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+def WallControll(x,y,player,level):
+    if x > 240 and x < 360 and y > 200 and y < 280:
+            print("centro, fermo")
+    if x > 240 and x < 360 and y > 0 and y < 200:
+        if level[convertiY((player.getY)-1)][convertiX(player.getX)] != "R":
+            player.setY(-1)
+    if x > 240 and x < 360 and y > 280 and y < 480:
+        if level[convertiY((player.getY)+1)][convertiX(player.getX)] != "R":
+            player.setY(1)
+    if x > 0 and x < 240 and y > 200 and y < 280:
+        if level[convertiY(player.getY)][convertiX((player.getX)-1)] != "R":
+            player.setX(-1)
+    if x > 360 and x < 640 and y > 200 and y < 280:
+        if level[convertiY(player.getY)][convertiX((player.getX)+1)] != "R":
+            player.setX(1)
+
+def main():
+    level=[
+    "RRRRRRRRRRRRRRRRRRRRRRRRRRR:::::::RRRRRRRRRRRRRRRRRRRRRRRRRR",
+    "++++++++++++++++++++++++++R:::::::R+++++++++++++++++++++++++",
+    "++++++++++++++++++++++++++R:::::::R+++++++++++++++++++++++++",
+    "++++++++++++++++++++++++++R:::::::R+++++++++++++++++++++++++",
+    "++++++++++++++++++++++++++R:::::::R+++++++++++++++++++++++++",
+    "++++++++++++++++++++++++++R:::::::R+++++++++++++++++++++++++",
+    "RRRRRRRRRRRRRRRRRRRR++++++R:::::::R++++++RRRRRRRRRRRRRRRRRRR",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++R::::::::::::::::::",
+    ":::RRRRRRRRRRRRRRRRR++++++R:::::::R++++++R::::::::::::::::::",
+    ":::R++++++++++++++++++++++R:::::::R++++++R::::::::::::::::::",
+    ":::R++++++++++++++++++++++R:::::::R++++++R++++++++++++::::::",
+    ":::R++++++++++++++++++++++R:::::::R++++++++++++++++++R::::::",
+    ":::R++++++++++++++++++++++R:::::::R++++++++++++++++++R::::::",
+    ":::RRRRRRRRRRRRRRRRR++++++R:::::::R++++++++++++++++++R::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++++++++++++++R::::::",
+    "::::::::::::::::::RR++++++R:::::::R++++++++++++++++++R::::::",
+    "::::::::::::::::::RR++++++R:::::::RRRRRRRRRRRRR++++++R::::::",
+    "::::::::::::::::::RR++++++R:::::::::::::::::::R++++++R::::::",
+    "::::::RRRRRRRRR:::RR++++++R:::::::::::::::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++R:::::::::::::::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++R:::::::::::::::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++RRRRRRRRRRRRR:::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++++++++++++++R:::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++++++++++++++R:::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++++++++++++++R:::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++++++++++++++R:::::::R++++++R::::::",
+    "::::::RR++++++R:::RR++++++++++++++++++R:::::::R++++++R::::::",
+    "::::::RR++++++R:::@RRRRRRRRR++++++++++RRRRRRRRR++++++RRRRRRR",
+    "::::::RR++++++R::::::::::::R+++++++++++++++++++++++++++++++R",
+    "::::::RR++++++RRRRRRRRRRRRRR+++++++++++++++++++++++++++++++R",
+    "::::::RR+++++++++++++++++++++++++++++++++++++++++++++++++++R",
+    "::::::RR+++++++++++++++++++++++++++++++++++++++++++++++++++R",
+    "::::::RR+++++++++++++++++++++++++++++++++++++++++++++++++++R",
+    "::::::RR+++++++++++++++++++++++++++++++++++++++++++++++++++R",
+    "::::::RR+++++++++++++++++++++++++++++++++++++++++++++++++++R",
+    "::::::RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+    "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",
+    "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",
 ]
     DIMENSIONI = (len(level[1])*TEN,len(level)*TEN)
     pygame.init()
     screen = pygame.display.set_mode(DIMENSIONI)
-    bg = pygame.image.load("lab01.jpeg")
+    bg = pygame.image.load("labirintoprova.jpeg")
     pygame.display.set_caption('Prova')
-    pallina = pygame.image.load("Pallina.png")
-
-
-    centroX = 10
-    centroY = 30
-
     kernel = np.ones((8 ,8), np.uint8)
-
-    def nothing(x):
-        pass
-
     cap = cv2.VideoCapture(0)       #utilizza cam di default (0)
-    cv2.namedWindow("Trackbars")
-    '''cap.set(3, 640)
-    cap.set(4, 480)'''
     cap.set(10, 100)        #lucentezza della cam
+     
 
-    cv2.createTrackbar("L - H", "Trackbars", 0, 179, nothing)  
-    cv2.createTrackbar("L - S", "Trackbars", 0, 255, nothing)
-    cv2.createTrackbar("L - V", "Trackbars", 0, 255, nothing)
-    cv2.createTrackbar("U - H", "Trackbars", 179, 179, nothing)
-    cv2.createTrackbar("U - S", "Trackbars", 255, 255, nothing)
-    cv2.createTrackbar("U - V", "Trackbars", 255, 255, nothing)
+    player = p.Pallina(300,300)
 
-        
 
-    '''    #min = [0, 0, 0]         max e min scala colori openCV
-        #max = [180, 255, 255]
-    '''
-        
     while True:
         _, frame = cap.read()       # _ bool per vedere se la cattura dal frame dalla cam ha avuto successo o meno, img frame della cam
         frameFlip = cv2.flip(frame, 1)
         hsv = cv2.cvtColor(frameFlip, cv2.COLOR_BGR2HSV)       #converto il frame da BGR in HSV    (H colore, S concentrazione colore, V lucentezza colore)
-
-        
-        l_h = cv2.getTrackbarPos("L - H", "Trackbars")
-        l_s = cv2.getTrackbarPos("L - S", "Trackbars")
-        l_v = cv2.getTrackbarPos("L - V", "Trackbars")
-        u_h = cv2.getTrackbarPos("U - H", "Trackbars")
-        u_s = cv2.getTrackbarPos("U - S", "Trackbars")
-        u_v = cv2.getTrackbarPos("U - V", "Trackbars")
         
         lower_blue = np.array([30, 163, 99])
         upper_blue = np.array([179, 255, 255])
@@ -131,26 +113,10 @@ def colorDetec():
 
         print(x,y)
         screen.blit(bg, (0,0))
-        screen.blit(pallina,(centroX,centroY))
-        if x > 240 and x < 360 and y > 200 and y < 280:
-            print("centro, fermo")
-        if x > 240 and x < 360 and y > 0 and y < 200:
-            if level[convertiY(centroY-1)][convertiX(centroX)] != "R":
-                centroY -= 1
-        if x > 240 and x < 360 and y > 280 and y < 480:
-            if level[convertiY(centroY+1)][convertiX(centroX)] != "R":
-                centroY += 1
-        if x > 0 and x < 240 and y > 200 and y < 280:
-            if level[convertiY(centroY)][convertiX(centroX-1)] != "R":
-                centroX -= 1
-        if x > 360 and x < 640 and y > 200 and y < 280:
-            if level[convertiY(centroY)][convertiX(centroX+1)] != "R":
-                centroX += 1
+        player.show(screen)
+        WallControll(x,y,player,level)
 
         pygame.display.update()
-
-def main():
-    colorDetec()
 
 if __name__ == "__main__":
     main()

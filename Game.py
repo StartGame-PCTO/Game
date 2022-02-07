@@ -4,115 +4,38 @@ import numpy as np
 import pygame
 import math
 import Pallina as p
-TEN = 8
-level=[
-    "ooooooooooooooooooooooooooooooooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++o+++++++o+",
-    "ooooooooooooooooooooooooooooooooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooooooooooooooooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooooooooooooooooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+o+ooooo+++o+++++o+ooo+ooo+++ooo+++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "oooooooooooooooooooo++++++++++ooo+++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "oooooooooooooooooooo++++++++++ooo+++++++++++++++++++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "oooooooooooooooooooo++++++++++ooo+++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooooooooooooooooooooooooooooooo++++++++++ooooooooo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooooooooooooooooooooooooooooooo+++++++++ooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+o+ooo+ooooo+o+o+o+o+o+o+oo++++++++++ooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+oo++++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+oo++++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+ooo+++++++++++++++++++++++++++++++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooo+oo++++++++++++++++++++++++++++++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooooooo++++++++++ooooooooooooooooo++++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++ooooooo+++++++++ooooooooooooooooooo+++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++++++oo+++++++++++ooooo++++++++++ooooooooooooooooooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo+++++++++ooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo+++++++++ooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo++++++++++oo+++o+oo++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "o+++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "o+++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++oo++++++++++++++++++++++++++ooo+++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++ooooooooooooooooooooooooooo+ooo+++++++++++++ooo+++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++ooooooooooooooooooooooooooooooo+++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++ooooooooooooooooooooooooooooooo+++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo+++++++++++oooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++++++++ooooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++ooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++ooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++++++++++++++++++++++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooooooooooooooooooooooo+++",
-    "++++++++++++++oo++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooooooooooooooooooooooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++oo++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++oo++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++ooo++++++++++ooooooooooooooooooooooooooooooooooooo+++++++++++ooooooooo++++++++++ooo+++",
-    "++++++++++++++oo++++++++++ooooooooooooooooooooooooooooooooooooooo+++++++++ooooooooooo+++++++++ooo+++",
-    "o+++++++++++++ooo+++++++++ooooooooooooooooooooooooooooooooooooooo+++++++++oooooooooo++++++++++ooo+++",
-    "++++++++++++++oo++++++++++ooo+++++++++++++++++++++++++++++++++oo++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++oo++++++++++ooo+++++++++++++++++++++++++++++++++oo++++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++ooo+++++++++ooo+++++++++++++++++++++++++++++++++ooo+++++++++ooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++oo+++++++++++oo+++++++++++++++++++++++++++++++++oo++++++++++ooo+++++oo++++++++++ooo+++",
-    "++++++++++++++ooooooooooo+ooo+++++++++++++++++++++++++++++++++ooooooooooooooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++ooooooooooooooo+++++++++++++++++++++++++++++++++ooooooooooooooo+++++oo++++++++++ooo+++",
-    "++++++++++++++ooooooooooooooo+++++++++++++++++++++++++++++++++ooooooooooooooo+++++ooo+++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
-    "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
-]
+import config as c
+
+"""lower_blue = np.array([30, 163, 99])
+upper_blue = np.array([179, 255, 255])"""
 
 def convertiX(x):
-    return math.floor(x/TEN)
+    return math.floor(x/c.CELL)
 
 def convertiY(y):
-    return math.floor(y/TEN)
+    return math.floor(y/c.CELL)
+
+def nothing(x):                                             
+    pass
+
+def wallControll(player,x,y):
+    if x > 240 and x < 360 and y > 200 and y < 280:
+            print("centro, fermo")
+    if x > 240 and x < 360 and y > 0 and y < 200:
+        if c.LEVEL1[convertiY((player.getY())-1)][convertiX(player.getX())] != "o":
+            player.setY(-1)
+    if x > 240 and x < 360 and y > 280 and y < 480:
+        if c.LEVEL1[convertiY((player.getY())+16)][convertiX(player.getX())] != "o":
+            player.setY(1)
+    if x > 0 and x < 240 and y > 200 and y < 280:
+        if c.LEVEL1[convertiY(player.getY())][convertiX((player.getX())-1)] != "o":
+            player.setX(-1)
+    if x > 360 and x < 640 and y > 200 and y < 280:
+        if c.LEVEL1[convertiY(player.getY())][convertiX((player.getX())+43)] != "o":
+            player.setX(1)
+    if c.LEVEL1[convertiY(player.getY())][convertiX((player.getX())+43)] == "A":
+        print("HAI VINTO")
+
 
 def temp(screen):
     bg = pygame.image.load("lab01.jpeg")
@@ -121,9 +44,15 @@ def temp(screen):
     cap = cv2.VideoCapture(0)       #utilizza cam di default (0)
     cv2.namedWindow("Trackbars")
     cap.set(10, 100)        #lucentezza della cam
+    cv2.createTrackbar("L - H", "Trackbars", 0, 179, nothing)   #Create a trackbar 
+    cv2.createTrackbar("L - S", "Trackbars", 0, 255, nothing)
+    cv2.createTrackbar("L - V", "Trackbars", 0, 255, nothing)
+    cv2.createTrackbar("U - H", "Trackbars", 179, 179, nothing)
+    cv2.createTrackbar("U - S", "Trackbars", 255, 255, nothing)
+    cv2.createTrackbar("U - V", "Trackbars", 255, 255, nothing)
 
 
-    player = p.Pallina(10,30)
+    player = p.Pallina(20,50)
 
 
     while True:
@@ -131,8 +60,15 @@ def temp(screen):
         frameFlip = cv2.flip(frame, 1)
         hsv = cv2.cvtColor(frameFlip, cv2.COLOR_BGR2HSV)       #converto il frame da BGR in HSV    (H colore, S concentrazione colore, V lucentezza colore)
 
-        lower_blue = np.array([30, 163, 99])
-        upper_blue = np.array([179, 255, 255])
+        l_h = cv2.getTrackbarPos("L - H", "Trackbars")
+        l_s = cv2.getTrackbarPos("L - S", "Trackbars")
+        l_v = cv2.getTrackbarPos("L - V", "Trackbars")
+        u_h = cv2.getTrackbarPos("U - H", "Trackbars")
+        u_s = cv2.getTrackbarPos("U - S", "Trackbars")
+        u_v = cv2.getTrackbarPos("U - V", "Trackbars")
+
+        lower_blue = np.array([l_h, l_s, l_v])
+        upper_blue = np.array([u_h, u_s, u_v])
         mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
         mask = cv2.erode(mask, kernel, iterations=5)
@@ -152,39 +88,37 @@ def temp(screen):
         print(x,y)
         screen.blit(bg, (0,0))
         player.show(screen)
-        if x > 240 and x < 360 and y > 200 and y < 280:
-            print("centro, fermo")
-        if x > 240 and x < 360 and y > 0 and y < 200:
-            if level[convertiY((player.getY())-1)][convertiX(player.getX())] != "o":
-                player.setY(-1)
-        if x > 240 and x < 360 and y > 280 and y < 480:
-            if level[convertiY((player.getY())+16)][convertiX(player.getX())] != "o":
-                player.setY(1)
-        if x > 0 and x < 240 and y > 200 and y < 280:
-            if level[convertiY(player.getY())][convertiX((player.getX())-1)] != "o":
-                player.setX(-1)
-        if x > 360 and x < 640 and y > 200 and y < 280:
-            if level[convertiY(player.getY())][convertiX((player.getX())+43)] != "o":
-                player.setX(1)
+        wallControll(player,x,y)
 
         pygame.display.update()
 
 def menu(screen):
     bg = pygame.image.load("menu.png")
     bg = pygame.transform.scale(bg, (800,800))
-    conta = 0
-    while conta<300:
+    while True:
         screen.blit(bg, (0,0))
-        conta += 1
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouseX = event.pos[0]
+                mouseY = event.pos[1]
+                if mouseX > c.START_BTN_CORD[0] and mouseX < c.START_BTN_CORD[0]+c.START_BTN_DIM[0] and mouseY > c.START_BTN_CORD[1] and mouseY < c.START_BTN_CORD[1]+c.START_BTN_DIM[1]:
+                    return # A TARATURA
+
+                if mouseX > c.LEVEL_BTN_CORD[0] and mouseX < c.LEVEL_BTN_CORD[0]+c.LEVEL_BTN_DIM[0] and mouseY > c.LEVEL_BTN_CORD[1] and mouseY < c.LEVEL_BTN_CORD[1]+c.LEVEL_BTN_DIM[1]:
+                    while True:
+                        print("Level") # A LIVELLI
+
         pygame.display.update()
 
 
 def main():
-    DIMENSIONI = (len(level[1])*TEN,len(level)*TEN)
+    dim = (len(c.LEVEL1[1])*c.CELL,len(c.LEVEL1)*c.CELL)
     pygame.init()
-    pygame.display.set_caption('Prova')
-    screen = pygame.display.set_mode(DIMENSIONI)
+    pygame.display.set_caption('Fly Maze')
+    screen = pygame.display.set_mode(dim)
     menu(screen)
     temp(screen)
+
+
 if __name__ == "__main__":
     main()

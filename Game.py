@@ -29,6 +29,28 @@ def convertiX(x):
 def convertiY(y):
     return math.floor(y/c.CELL)
 
+def indovinello(screen,nlvl):
+    x = pygame.image.load("x.png")
+    conta = 0
+    if nlvl == 1:
+        bg = pygame.image.load("indovinello1.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        screen.blit(bg,(0,0))
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouseX = event.pos[0]
+                mouseY = event.pos[1]
+                if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    screen.blit(x,(c.RISP1_BTN_CORD))
+                if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    screen.blit(x,(c.RISP2_BTN_CORD))
+                if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    #HAI VINTO
+                    return True
+
+        pygame.display.update()
+
 def wallControll(player,x,y,level):
     if x > 240 and x < 360 and y > 200 and y < 280:
             print("centro, fermo")
@@ -44,9 +66,9 @@ def wallControll(player,x,y,level):
     if x > 360 and x < 640 and y > 200 and y < 280:
         if level[convertiY(player.getY())][convertiX((player.getX())+35)] != "o":
             player.setX(2)
-    if level[convertiY(player.getY())][convertiX((player.getX())+43)] == "A":
-        print("HAI VINTO")
-
+    if level[convertiY(player.getY())][convertiX((player.getX()))] == "A":
+        return True
+    else: return False
 
 def lvl(screen,nlvl):
     if nlvl == 1:
@@ -57,7 +79,7 @@ def lvl(screen,nlvl):
     if nlvl == 2:
         bg = pygame.image.load("lab02.png")
         bg = pygame.transform.scale(bg, (800,800))
-        x,y = 600,150
+        x,y = 760,420
         level = c.LEVEL2
     if nlvl == 3:
         level = c.LEVEL3
@@ -100,27 +122,12 @@ def lvl(screen,nlvl):
         print(x,y)
         screen.blit(bg, (0,0))
         player.show(screen)
-        wallControll(player,x,y,level)
+        win = wallControll(player,x,y,level)
+        if win == True and indovinello(screen,nlvl):
+            break
 
         pygame.display.update()
-
-def menu(screen):
-    bg = pygame.image.load("menu.png")
-    bg = pygame.transform.scale(bg, (800,800))
-    while True:
-        screen.blit(bg, (0,0))
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                mouseX = event.pos[0]
-                mouseY = event.pos[1]
-                if mouseX > c.START_BTN_CORD[0] and mouseX < c.START_BTN_CORD[0]+c.START_BTN_DIM[0] and mouseY > c.START_BTN_CORD[1] and mouseY < c.START_BTN_CORD[1]+c.START_BTN_DIM[1]:
-                    start(screen,1)
-
-                if mouseX > c.LEVEL_BTN_CORD[0] and mouseX < c.LEVEL_BTN_CORD[0]+c.LEVEL_BTN_DIM[0] and mouseY > c.LEVEL_BTN_CORD[1] and mouseY < c.LEVEL_BTN_CORD[1]+c.LEVEL_BTN_DIM[1]:
-                    level(screen)
-
-        pygame.display.update()
-
+    
 def start(screen,nlvl):
     bg = pygame.image.load("menu2.png")
     ok = pygame.image.load("ok.png")
@@ -175,6 +182,8 @@ def start(screen,nlvl):
             waitTime+=1
             if waitTime==50:
                 lvl(screen,nlvl)
+                if nlvl <= 4:
+                    nlvl += 1
         else:
             screen.blit(no, centerTitle2)
             waitTime=0
@@ -200,6 +209,22 @@ def level(screen):
                     start(screen,4)
         pygame.display.update()
 
+def menu(screen):
+    bg = pygame.image.load("menu.png")
+    bg = pygame.transform.scale(bg, (800,800))
+    while True:
+        screen.blit(bg, (0,0))
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouseX = event.pos[0]
+                mouseY = event.pos[1]
+                if mouseX > c.START_BTN_CORD[0] and mouseX < c.START_BTN_CORD[0]+c.START_BTN_DIM[0] and mouseY > c.START_BTN_CORD[1] and mouseY < c.START_BTN_CORD[1]+c.START_BTN_DIM[1]:
+                    start(screen,1)
+
+                if mouseX > c.LEVEL_BTN_CORD[0] and mouseX < c.LEVEL_BTN_CORD[0]+c.LEVEL_BTN_DIM[0] and mouseY > c.LEVEL_BTN_CORD[1] and mouseY < c.LEVEL_BTN_CORD[1]+c.LEVEL_BTN_DIM[1]:
+                    level(screen)
+
+        pygame.display.update()
 
 def main():
     dim = (len(c.LEVEL1[1])*c.CELL,len(c.LEVEL1)*c.CELL)

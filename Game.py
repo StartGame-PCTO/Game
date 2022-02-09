@@ -35,58 +35,45 @@ def indovinello(screen,nlvl):
         bg = pygame.image.load("indovinello1.png")
         bg = pygame.transform.scale(bg, (800,800))
         screen.blit(bg,(0,0))
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouseX = event.pos[0]
-                    mouseY = event.pos[1]
-                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        screen.blit(x,(c.RISP1_BTN_CORD))
-                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        screen.blit(x,(c.RISP2_BTN_CORD))
-                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        return True
-
-            pygame.display.update()
     if nlvl == 2:
         bg = pygame.image.load("indovinello2.png")
         bg = pygame.transform.scale(bg, (800,800))
         screen.blit(bg,(0,0))
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouseX = event.pos[0]
-                    mouseY = event.pos[1]
-                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        screen.blit(x,(c.RISP1_BTN_CORD))
-                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        screen.blit(x,(c.RISP2_BTN_CORD))
-                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                        return True
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouseX = event.pos[0]
+                mouseY = event.pos[1]
+                if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    screen.blit(x,(c.RISP1_BTN_CORD))
+                if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    screen.blit(x,(c.RISP2_BTN_CORD))
+                if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                    return True
 
-            pygame.display.update()
+        pygame.display.update()
 
 def wallControll(player,x,y,level):
     if x > 240 and x < 360 and y > 200 and y < 280:
             print("centro, fermo")
     if x > 240 and x < 360 and y > 0 and y < 200:
-        if level[convertiY((player.getY())-1)][convertiX(player.getX())] != "o":
+        if level[convertiY((player.getY())-3)][convertiX(player.getX())] != "o" and level[convertiY((player.getY())-3)][convertiX(player.getX()+35)] != "o":
             player.setY(-3)
     if x > 240 and x < 360 and y > 280 and y < 480:
-        if level[convertiY((player.getY())+35)][convertiX(player.getX())] != "o":
+        if level[convertiY((player.getY())+38)][convertiX(player.getX())] != "o" and level[convertiY((player.getY())+38)][convertiX(player.getX()+35)] != "o":
             player.setY(3)
     if x > 0 and x < 240 and y > 200 and y < 280:
-        if level[convertiY(player.getY())][convertiX((player.getX())-1)] != "o":
+        if level[convertiY(player.getY())][convertiX((player.getX())-3)] != "o" and level[convertiY(player.getY()+35)][convertiX((player.getX())-3)] != "o":
             player.setX(-3)
     if x > 360 and x < 640 and y > 200 and y < 280:
-        if level[convertiY(player.getY())][convertiX((player.getX())+35)] != "o":
+        if level[convertiY(player.getY())][convertiX((player.getX())+38)] != "o" and level[convertiY(player.getY()+35)][convertiX((player.getX())+38)] != "o":
             player.setX(3)
     if level[convertiY(player.getY())][convertiX((player.getX()))] == "A":
         return True
     else: return False
 
 def lvl(screen,nlvl):
-    vittoria = pygame.image.load("winback.png")
+    vittoria = pygame.image.load("Win.png")
     vittoria = pygame.transform.scale(vittoria, (800,800))
     if nlvl == 1:
         level = c.LEVEL1
@@ -99,8 +86,14 @@ def lvl(screen,nlvl):
         x,y = 760,420
         level = c.LEVEL2
     if nlvl == 3:
+        bg = pygame.image.load("lab03.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        x,y = 350,1
         level = c.LEVEL3
     if nlvl == 4:
+        bg = pygame.image.load("lab04.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        x,y = 760,420
         level = c.LEVEL4
 
     player = p.Pallina(x,y)
@@ -233,9 +226,9 @@ def level(screen):
                     start(screen,1)
                 if mouseX > c.LVL2_BTN_CORD[0] and mouseX < c.LVL2_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL2_BTN_CORD[1] and mouseY < c.LVL2_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
                     start(screen,2)
-                if mouseX > c.LVL1_BTN_CORD[0] and mouseX < c.LVL1_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL1_BTN_CORD[1] and mouseY < c.LVL1_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                if mouseX > c.LVL3_BTN_CORD[0] and mouseX < c.LVL3_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL3_BTN_CORD[1] and mouseY < c.LVL3_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
                     start(screen,3)
-                if mouseX > c.LVL1_BTN_CORD[0] and mouseX < c.LVL1_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL1_BTN_CORD[1] and mouseY < c.LVL1_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                if mouseX > c.LVL4_BTN_CORD[0] and mouseX < c.LVL4_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL4_BTN_CORD[1] and mouseY < c.LVL4_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
                     start(screen,4)
         pygame.display.update()
 

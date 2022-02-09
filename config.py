@@ -1,20 +1,22 @@
 #COSTANZE
-CELLA  =  8
+CELL  =  8
 DIM_IMG  = ( 800 , 800 )
 
 NERO  = ( 0 , 0 , 0 )
 
-START_BTN_CORD  = ( 296 , 432 )
-START_BTN_DIM  = ( 239 , 121 )
-LIVELLO_BTN_CORD  = ( 296 , 578 )
-LEVEL_BTN_DIM  = ( 239 , 121 )
-LVL1_BTN_CORD  = ( 186 , 225 )
-LVL2_BTN_CORD  = ( 568 , 223 )
-LVL_BTN_DIM  = ( 249 , 251 )
-RISP1_BTN_CORD  = ( 50 , 626 )
-RISP2_BTN_CORD  = ( 283 , 626 )
-RISP3_BTN_CORD  = ( 537 , 626 )
-RISP_BTN_DIM  = ( 175 , 119 )
+START_BTN_CORD  = ( 249 , 441 )
+START_BTN_DIM  = ( 242 , 112 )
+LEVEL_BTN_CORD  = ( 298 , 582 )
+LEVEL_BTN_DIM  = ( 242 , 112 )
+LVL1_BTN_CORD  = ( 149 , 180 )
+LVL2_BTN_CORD  = ( 454 , 180 )
+LVL3_BTN_CORD  = ( 149 , 482 )
+LVL4_BTN_CORD  = ( 454 , 482 )
+LVL_BTN_DIM  = ( 200 , 200 )
+RISP1_BTN_CORD  = ( 55 , 631 )
+RISP2_BTN_CORD  = ( 304 , 631 )
+RISP3_BTN_CORD  = ( 552 , 631 )
+RISP_BTN_DIM  = ( 217 , 127 )
 
 b  = ( 0 , 0 )
 d  = ( 100 , 100 )
@@ -107,16 +109,16 @@ LEVEL1 = [
     "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++++++ooo+++",
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++",
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
-    "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
+    "AAAAAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ooo+++",
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
     "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++",
@@ -129,11 +131,11 @@ LEVEL2 = [
     "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
     "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
     "oooooooooooooooooooooo++++ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+++++++",
-    "+++++++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
-    "+++++++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
-    "+++++++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
-    "+++++++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
-    "+++++++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
+    "AAAAA++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
+    "AAAAA++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
+    "AAAAA++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
+    "AAAAA++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
+    "AAAAA++++++++++++++++oo+++o+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++oo++++++",
     "oooooooooooooooo+++++oo+++ooooooo++++++oooooooooooooooooooooooooooooooooooooooooooooooo+++++oo++++++",
     "oooooooooooooooo+++++oo+++ooooooo+++++ooooooooooooooooooooooooooooooooooooooooooooooooo+++++oo++++++",
     "+++++++++++++++o+++++oo+++++++++o+++++oo++++++++++++++++++++++++++++++++++++++++++++++o+++++oo++++++",
@@ -227,18 +229,18 @@ LEVEL2 = [
 ]
 
 LEVEL3 = [
-    "oooooooooooooooooooooooooooooooooooooooooooooo++++ooooooooooooooooooooooooooooooooooo+++++++++++++++",
-    "o+ooooooooooooooooooooooooooooooooooooooooo+oo++++oo+oooooooooooooooooooooooooooooo+oooooooooooooooo",
-    "ooooooooooooooooooooooooooooooooooooooooooo+oo++++ooooooooooooooooooooooooooooooooo+oooooooooooooooo",
-    "oooooooooooooooooooooooooooooo+o+++oooooooo+oo++++oo+++o+++o+o+o+o+++o+o+o+o+++oooo+oo++++++++++++oo",
-    "ooooooooooooooooooooooooooooooooooooooooooo+o+++++ooooooooooooooooooooooooooooooooo+oo++++++++++++oo",
-    "o++o+++++++++++++o+o+o+++++o+ooooo+ooooooooooo++++ooooooooooooooooooooooooooo+oo+oo+oo++++++++++++oo",
-    "oooooooooooooooooooooooooooo+oo++++oo+ooooo+oo++++oo++++oo++++++++++++++++++++ooooo+oo++++++++++++oo",
-    "+oooooooooooooooooooooooo+oo+oo++++oo+oooooooo++++oo++++oo++++++++++++++++++++oo+ooooo+++++oo+++++oo",
-    "+oo+++++++++++++++++++++++oo+oo++++oo+ooooo+oo++++oo++++oo++++++++++++++++++++ooooo+oo++++oooo++++oo",
-    "+oo+++++++++++++++++++++++oo+oo++++oo++++o++oo++++oo++++oo++++++++++++++++++++oo+ooooo++++oooo++++oo",
-    "+oo+++++++++++++++++++++++oo+oo++++ooooooooooo++++oo++++ooooooooooooooooo+++++ooooo+oo++++oooo++++oo",
-    "+oo+++++++++++++++++++++++oo+oo+++++ooooooooo+++++oo++++oooooooooooooooooo++++oo+ooooo++++oooo++++oo",
+    "ooooooooooooooooooooooooooooooooooooooooooooo+++++oooooooooooooooooooooooooooooooooooooooooooooooooo",
+    "o+ooooooooooooooooooooooooooooooooooooooooooo+++++ooooooooooooooooooooooooooooooooo+oooooooooooooooo",
+    "ooooooooooooooooooooooooooooooooooooooooooooo+++++ooooooooooooooooooooooooooooooooo+oooooooooooooooo",
+    "ooooooooooooooooooooooooooooooooooooooooooooo+++++ooooooooooooooooooooooooooooooooo+oo++++++++++++oo",
+    "ooooooooooooooooooooooooooooooooooooooooooooo+++++ooooooooooooooooooooooooooooooooo+oo++++++++++++oo",
+    "o++o+++++++++++++o+o+o+++++o+ooooo+oooooooooo+++++ooooooooooooooooooooooooooo+oo+oo+oo++++++++++++oo",
+    "oooooooooooooooooooooooooooo+oo++++oo+ooooooo+++++oo++++oo++++++++++++++++++++ooooo+oo++++++++++++oo",
+    "+oooooooooooooooooooooooo+oo+oo++++oo+ooooooo+++++oo++++oo++++++++++++++++++++oo+ooooo+++++oo+++++oo",
+    "+oo+++++++++++++++++++++++oo+oo++++oo+ooooooo+++++oo++++oo++++++++++++++++++++ooooo+oo++++oooo++++oo",
+    "+oo+++++++++++++++++++++++oo+oo++++oo++++oooo+++++oo++++oo++++++++++++++++++++oo+ooooo++++oooo++++oo",
+    "+oo+++++++++++++++++++++++oo+oo++++oooooooooo+++++oo++++ooooooooooooooooo+++++ooooo+oo++++oooo++++oo",
+    "+oo+++++++++++++++++++++++oo+oo+++++++++++++++++++oo++++oooooooooooooooooo++++oo+ooooo++++oooo++++oo",
     "+oo++++ooooooo++++++oooooooo+oo+++++++++++++++++++oo++++oo++++o+o+o+o+o+oo++++oo+oo+oo++++oooo++++oo",
     "+oo++++oooooooo++++ooooooooo+oo+++++++++++++++++++oo++++oo+oooooooooooo+oo++++oo+oo+oo++++oooo++++oo",
     "+oo++++oo++++oo++++oo+++++oo+oo+++++++++++++++++++oo++++oo+oooooooooooo+oo++++oo++++oo++++oooo++++oo",

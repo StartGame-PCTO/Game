@@ -17,7 +17,7 @@ Menù del gioco
 Esempio di gioco in azione
 ![esempioDiGioco]("esempioGame.png")
 
-#Oggetti e Grafica
+#  Oggetti e Grafica  
 Per Disegnare gli oggetti e realizzare la grafica del videogioco Aseprite.
 Tutti questi oggetti sono delle pixelArt.
 

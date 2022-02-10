@@ -15,19 +15,21 @@ Menù del gioco
 #  Oggetti e Grafica  
 Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.org/)
 
-![Background](https://github.com/StartGame-PCTO/Game/blob/main/Image/Background.png)
 ![Ball1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ball1.png)
 ![BaseRiddle](https://github.com/StartGame-PCTO/Game/blob/main/Image/BaseRiddle.png)
 ![ButtonMenu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ButtonMenu.png)
-![Calibration](https://github.com/StartGame-PCTO/Game/blob/main/Image/Calibration.png)
-![LabAll](https://github.com/StartGame-PCTO/Game/blob/main/Image/LabAll.png)
 ![Lock](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lock.png)
-![Menu](https://github.com/StartGame-PCTO/Game/blob/main/Image/Menu.png)
 ![Next](https://github.com/StartGame-PCTO/Game/blob/main/Image/Next.png)
 ![No](https://github.com/StartGame-PCTO/Game/blob/main/Image/No.png)
 ![Ok](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ok.png)
 ![Start](https://github.com/StartGame-PCTO/Game/blob/main/Image/Start.png)
 ![X](https://github.com/StartGame-PCTO/Game/blob/main/Image/X.png)
+Sfondo
+![Background](https://github.com/StartGame-PCTO/Game/blob/main/Image/Background.png)
+Tutti i labirinti
+![LabAll](https://github.com/StartGame-PCTO/Game/blob/main/Image/LabAll.png)
+Schermata dove bisogna calibrare
+![Calibration](https://github.com/StartGame-PCTO/Game/blob/main/Image/Calibration.png)
 
 
 

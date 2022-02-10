@@ -1,4 +1,4 @@
-![Logo](https://github.com/StartGame-PCTO/Game/blob/main/Logo.jpeg)
+![Logo](https://github.com/StartGame-PCTO/Game/blob/main/Image/Logo.png)
 # Idea
 Il nostro gioco ha come scopo la riabilitazione degli arti, e la risoluzione di problemi matematici. Per far ciò abbiamo pensato ad un labirinto, nella quale il gamer dovrà trovare l'uscita, muovendo "la pallina" attraverso il movimento della mano che impugnerà un oggetto, il programma impostato riconoscerà il colore ed una volta configurato il tutto lo StartGame avrà inizio. 
 

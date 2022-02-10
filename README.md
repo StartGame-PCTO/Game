@@ -1,6 +1,6 @@
 ![Logo](https://github.com/StartGame-PCTO/Game/blob/main/Image/Logo.png)
 # Idea
-Il nostro gioco ha come scopo la riabilitazione degli arti e la risoluzione di problemi matematici. Per far ciò abbiamo pensato ad un labirinto, nella quale il gamer, dovrà trovare l'uscita muovendo l'oggetto impugnato che farà muovere la pedina, il programma, riconoscerà il colore ed una volta settato il centro il gioco avrà inizio. 
+Il nostro gioco ha come scopo la riabilitazione degli arti e la risoluzione di problemi matematici. Per far ciò abbiamo pensato ad un labirinto, nella quale il gamer, dovrà trovare l'uscita muovendo l'oggetto impugnato che farà muovere la pedina. Il programma, riconoscerà il colore ed una volta settato il centro il gioco avrà inizio. 
 
 
 

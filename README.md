@@ -7,7 +7,7 @@ Il nostro gioco ha come scopo la riabilitazione degli arti, e la risoluzione di 
 # Blue color detection
 Per il movimento della mano abbiamo usato la libreria openCV con il color detection, che ci permette di isolare il colore da noi scelto.
 
-![ColoreBlu](https://github.com/NameNotFound-PCTO/Game/blob/main/code/color_dect_blue.jpeg)
+![ColoreBlu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ColorDetection.png)
 
 Menù del gioco
 ![MenuGioco](https://github.com/StartGame-PCTO/Game/blob/main/Image/Menu.png)

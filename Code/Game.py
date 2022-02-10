@@ -1,10 +1,11 @@
 import cv2
-from cv2 import DIST_MASK_3
 import numpy as np
 import pygame
 import math
 import Pallina as p
 import config as c
+
+
 
 def nothing(x):                                             
     pass
@@ -30,28 +31,93 @@ def convertiY(y):
     return math.floor(y/c.CELL)
 
 def indovinello(screen,nlvl):
-    x = pygame.image.load("x.png")
+    x = pygame.image.load("Image\X.png")
     if nlvl == 1:
-        bg = pygame.image.load("indovinello1.png")
+        bg = pygame.image.load("Image\Riddle1.png")
         bg = pygame.transform.scale(bg, (800,800))
         screen.blit(bg,(0,0))
-    if nlvl == 2:
-        bg = pygame.image.load("indovinello2.png")
-        bg = pygame.transform.scale(bg, (800,800))
-        screen.blit(bg,(0,0))
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                mouseX = event.pos[0]
-                mouseY = event.pos[1]
-                if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                    screen.blit(x,(c.RISP1_BTN_CORD))
-                if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                    screen.blit(x,(c.RISP2_BTN_CORD))
-                if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
-                    return True
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouseX = event.pos[0]
+                    mouseY = event.pos[1]
+                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        screen.blit(x,(c.RISP1_BTN_CORD))
+                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        screen.blit(x,(c.RISP2_BTN_CORD))
+                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        return True
+            pygame.display.update()
 
-        pygame.display.update()
+    if nlvl == 2:
+        bg = pygame.image.load("Image\Riddle2.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        screen.blit(bg,(0,0))
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouseX = event.pos[0]
+                    mouseY = event.pos[1]
+                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP1_BTN_CORD))
+                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        return True
+                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:    
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP3_BTN_CORD))
+            pygame.display.update()
+
+    if nlvl == 3:
+        bg = pygame.image.load("Image\Riddle3.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        screen.blit(bg,(0,0))
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouseX = event.pos[0]
+                    mouseY = event.pos[1]
+                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP1_BTN_CORD))
+                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        return True
+                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:    
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP3_BTN_CORD))
+            pygame.display.update()
+
+    if nlvl == 4:
+        bg = pygame.image.load("Image\Riddle4.png")
+        bg = pygame.transform.scale(bg, (800,800))
+        screen.blit(bg,(0,0))
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouseX = event.pos[0]
+                    mouseY = event.pos[1]
+                    if mouseX > c.RISP1_BTN_CORD[0] and mouseX < c.RISP1_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP1_BTN_CORD[1] and mouseY < c.RISP1_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP1_BTN_CORD))
+                    if mouseX > c.RISP2_BTN_CORD[0] and mouseX < c.RISP2_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP2_BTN_CORD[1] and mouseY < c.RISP2_BTN_CORD[1]+c.RISP_BTN_DIM[1]:
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        return True
+                    if mouseX > c.RISP3_BTN_CORD[0] and mouseX < c.RISP3_BTN_CORD[0]+c.RISP_BTN_DIM[0] and mouseY > c.RISP3_BTN_CORD[1] and mouseY < c.RISP3_BTN_CORD[1]+c.RISP_BTN_DIM[1]:    
+                        pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                        pygame.mixer.Sound.play(soundClick)
+                        screen.blit(x,(c.RISP3_BTN_CORD))
+
+            pygame.display.update()
 
 def wallControll(player,x,y,level):
     if x > 240 and x < 360 and y > 200 and y < 280:
@@ -68,32 +134,42 @@ def wallControll(player,x,y,level):
     if x > 360 and x < 640 and y > 200 and y < 280:
         if level[convertiY(player.getY())][convertiX((player.getX())+38)] != "o" and level[convertiY(player.getY()+35)][convertiX((player.getX())+38)] != "o":
             player.setX(3)
+    if level[convertiY(player.getY())][convertiX((player.getX()))] == "P":
+        player.teleport(440,609)
     if level[convertiY(player.getY())][convertiX((player.getX()))] == "A":
         return True
     else: return False
 
 def lvl(screen,nlvl):
-    vittoria = pygame.image.load("Win.png")
+    vittoria = pygame.image.load("Image\Win.png")
     vittoria = pygame.transform.scale(vittoria, (800,800))
     if nlvl == 1:
+        pygame.mixer.Sound.set_volume(soundLvl1,0.5)    #set the volume of the background track
+        pygame.mixer.Sound.play(soundLvl1, -1) 
         level = c.LEVEL1
-        bg = pygame.image.load("lab01.jpeg")
+        bg = pygame.image.load("Image\Lab1.jpeg")
         bg = pygame.transform.scale(bg, (800,800))
         x,y = 20,50
     if nlvl == 2:
-        bg = pygame.image.load("lab02.png")
+        pygame.mixer.Sound.set_volume(soundLvl2,0.5)    #set the volume of the background track
+        pygame.mixer.Sound.play(soundLvl1, -1) 
+        bg = pygame.image.load("Image\Lab2.png")
         bg = pygame.transform.scale(bg, (800,800))
         x,y = 760,420
         level = c.LEVEL2
     if nlvl == 3:
-        bg = pygame.image.load("lab03.png")
+        pygame.mixer.Sound.set_volume(soundLvl3,0.5)    #set the volume of the background track
+        pygame.mixer.Sound.play(soundLvl1, -1) 
+        bg = pygame.image.load("Image\Lab3.png")
         bg = pygame.transform.scale(bg, (800,800))
         x,y = 350,1
         level = c.LEVEL3
     if nlvl == 4:
-        bg = pygame.image.load("lab04.png")
+        pygame.mixer.Sound.set_volume(soundLvl4,0.5)    #set the volume of the background track
+        pygame.mixer.Sound.play(soundLvl1, -1) 
+        bg = pygame.image.load("Image\Lab4.png")
         bg = pygame.transform.scale(bg, (800,800))
-        x,y = 760,420
+        x,y = 45,1
         level = c.LEVEL4
 
     player = p.Pallina(x,y)
@@ -134,6 +210,14 @@ def lvl(screen,nlvl):
         player.show(screen)
         win = wallControll(player,x,y,level)
         if win == True and indovinello(screen,nlvl):
+            if nlvl == 1:
+                pygame.mixer.Sound.stop(soundLvl1)
+            if nlvl == 2:
+                pygame.mixer.Sound.stop(soundLvl2)
+            if nlvl == 3:
+                pygame.mixer.Sound.stop(soundLvl3)
+            if nlvl == 4:
+                pygame.mixer.Sound.stop(soundLvl4)
             break
         pygame.display.update()
     
@@ -143,30 +227,27 @@ def lvl(screen,nlvl):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouseX = event.pos[0]
                 mouseY = event.pos[1]
-                if mouseX > c.b[0] and mouseX < c.b[0]+c.d[0] and mouseY > c.b[1] and mouseY < c.b[1]+c.d[1]:
+                if mouseX > c.NEXT_BTN_CORD[0] and mouseX < c.NEXT_BTN_CORD[0]+c.MN_BTN_DIM[0] and mouseY > c.NEXT_BTN_CORD[1] and mouseY < c.NEXT_BTN_CORD[1]+c.MN_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     return True
-                else:
+                if mouseX > c.MENU_BTN_CORD[0] and mouseX < c.MENU_BTN_CORD[0]+c.MN_BTN_DIM[0] and mouseY > c.MENU_BTN_CORD[1] and mouseY < c.MENU_BTN_CORD[1]+c.MN_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     return False
         pygame.display.update()
     
 def start(screen,nlvl):
-    bg = pygame.image.load("menu2.png")
-    ok = pygame.image.load("ok.png")
-    no = pygame.image.load("no.png")
-    start = pygame.image.load("start.png")
+    bg = pygame.image.load("Image\Calibration.png")
+    ok = pygame.image.load("Image\Ok.png")
+    no = pygame.image.load("Image\\No.png")
     bg = pygame.transform.scale(bg, (800,800))
     ok = pygame.transform.scale(ok, (300,200))
     no = pygame.transform.scale(no, (300,200))
-    fnt = pygame.font.SysFont("Bauhaus 93", 50)
-    txt = fnt.render("Premi start quando vedi OK",True,c.NERO)
-    centerTitle = txt.get_rect(center=(c.DIM_IMG[0]/2,100))
     centerTitle2 = ok.get_rect(center=(c.DIM_IMG[0]/2,c.DIM_IMG[1]/2))
-    centerTitle3 = start.get_rect(center=(c.DIM_IMG[0]/2,700))
     waitTime = 0
     while True:
-        screen.blit(bg, (0,0))
-        screen.blit(txt,centerTitle)
-        screen.blit(start,centerTitle3)
+        screen.blit(bg,(0,0))
 
         _, frame = cap.read()       # _ bool per vedere se la cattura dal frame dalla cam ha avuto successo o meno, img frame della cam
         frameFlip = cv2.flip(frame, 1)
@@ -202,9 +283,10 @@ def start(screen,nlvl):
             screen.blit(ok, centerTitle2)
             waitTime+=1
             if waitTime==50:
+                pygame.mixer.Sound.stop(soundMenu)
                 rigioca = lvl(screen,nlvl)
-                if rigioca == True:
-                    nlvl += 1
+                if rigioca == True and nlvl < 4:
+                        nlvl += 1
                 else:
                     break
         else:
@@ -214,27 +296,47 @@ def start(screen,nlvl):
         pygame.display.update()
 
 def level(screen):
-    bg = pygame.image.load("labirintiALL.png")
+    bg = pygame.image.load("Image\LabAll.png")    
+    menu = pygame.image.load("Image\ButtonMenu.png")
     bg = pygame.transform.scale(bg, (800,800))
+    menu = pygame.transform.scale(menu,(180,80))
     while True:
         screen.blit(bg,(0,0))
+        screen.blit(menu,(310,700))
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouseX = event.pos[0]
                 mouseY = event.pos[1]
                 if mouseX > c.LVL1_BTN_CORD[0] and mouseX < c.LVL1_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL1_BTN_CORD[1] and mouseY < c.LVL1_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     start(screen,1)
                 if mouseX > c.LVL2_BTN_CORD[0] and mouseX < c.LVL2_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL2_BTN_CORD[1] and mouseY < c.LVL2_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     start(screen,2)
                 if mouseX > c.LVL3_BTN_CORD[0] and mouseX < c.LVL3_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL3_BTN_CORD[1] and mouseY < c.LVL3_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     start(screen,3)
                 if mouseX > c.LVL4_BTN_CORD[0] and mouseX < c.LVL4_BTN_CORD[0]+c.LVL_BTN_DIM[0] and mouseY > c.LVL4_BTN_CORD[1] and mouseY < c.LVL4_BTN_CORD[1]+c.LVL_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
                     start(screen,4)
+                if mouseX > c.MENU2_BTN_CORD[0] and mouseX < c.MENU2_BTN_CORD[0]+c.MENU2_BTN_DIM[0] and mouseY > c.MENU2_BTN_CORD[1] and mouseY < c.MENU2_BTN_CORD[1]+c.MENU2_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick)
+                    return
         pygame.display.update()
 
 def menu(screen):
-    bg = pygame.image.load("menu.png")
+    bg = pygame.image.load("Image\Menu.png")
     bg = pygame.transform.scale(bg, (800,800))
+
+
+    pygame.mixer.Sound.set_volume(soundMenu,0.5)    #set the volume of the background track
+    pygame.mixer.Sound.play(soundMenu, -1)  
+
     while True:
         screen.blit(bg, (0,0))
         for event in pygame.event.get():
@@ -242,14 +344,32 @@ def menu(screen):
                 mouseX = event.pos[0]
                 mouseY = event.pos[1]
                 if mouseX > c.START_BTN_CORD[0] and mouseX < c.START_BTN_CORD[0]+c.START_BTN_DIM[0] and mouseY > c.START_BTN_CORD[1] and mouseY < c.START_BTN_CORD[1]+c.START_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick) 
                     start(screen,1)
+                    
 
                 if mouseX > c.LEVEL_BTN_CORD[0] and mouseX < c.LEVEL_BTN_CORD[0]+c.LEVEL_BTN_DIM[0] and mouseY > c.LEVEL_BTN_CORD[1] and mouseY < c.LEVEL_BTN_CORD[1]+c.LEVEL_BTN_DIM[1]:
+                    pygame.mixer.Sound.set_volume(soundClick,1)    #set the volume of the background track
+                    pygame.mixer.Sound.play(soundClick) 
                     level(screen)
 
         pygame.display.update()
 
 def main():
+    pygame.mixer.init()
+    global soundMenu
+    global soundClick
+    global soundLvl1
+    global soundLvl2
+    global soundLvl3
+    global soundLvl4
+    soundMenu = pygame.mixer.Sound("Sounds\Menu.mp3")
+    soundClick = pygame.mixer.Sound("Sounds\Click.mp3")
+    soundLvl1 = pygame.mixer.Sound("Sounds\Lvl1.mp3")
+    soundLvl2 = pygame.mixer.Sound("Sounds\Lvl2.mp3")
+    soundLvl3 = pygame.mixer.Sound("Sounds\Lvl3.mp3")
+    soundLvl4 = pygame.mixer.Sound("Sounds\Lvl4.mp3")
     dim = (len(c.LEVEL1[1])*c.CELL,len(c.LEVEL1)*c.CELL)
     pygame.init()
     pygame.display.set_caption('Fly Maze')

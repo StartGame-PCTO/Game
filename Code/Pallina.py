@@ -2,7 +2,7 @@ import pygame
 
 class Pallina():
     def __init__(self,x,y):
-        self.pallina = pygame.image.load("Pallina.png")
+        self.pallina = pygame.image.load("Image\Ball1.png")
         self.centroX = x
         self.centroY = y
     
@@ -20,3 +20,7 @@ class Pallina():
     
     def getY(self):
         return self.centroY
+    
+    def teleport(self,x,y):
+        self.centroX = x
+        self.centroY = y

@@ -56,9 +56,3 @@ Disegno pixelArt: [Aseprite](https://www.aseprite.org)
 
 # Componenti gruppo
 De Carlini Davide, Faggio Cristian, Cavaglieri Nicolò.
-
-# Ringraziamenti
-* [IIT](https://www.iit.it) (Giacinto Barresi, Carlo Canali)
-* [Associazione Italiana Sclerosi Multipla](https://www.aism.it) (Jessica Podda)
-* [Università di Genova](https://unige.it/it/) (Prof. Riccardo Berta)
-* [Wondertech](http://www.wondertechweb.com) (Giuseppe Gioco, Ivan Carmosino)

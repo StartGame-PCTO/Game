@@ -16,7 +16,6 @@ Menù del gioco
 Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.org/)
 
 ![Ball1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ball1.png)
-![BaseRiddle](https://github.com/StartGame-PCTO/Game/blob/main/Image/BaseRiddle.png)
 ![ButtonMenu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ButtonMenu.png)
 ![Lock](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lock.png)
 ![Next](https://github.com/StartGame-PCTO/Game/blob/main/Image/Next.png)

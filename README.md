@@ -24,6 +24,7 @@ Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.
 ![Ok](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ok.png)
 ![Start](https://github.com/StartGame-PCTO/Game/blob/main/Image/Start.png)
 ![X](https://github.com/StartGame-PCTO/Game/blob/main/Image/X.png)
+
 Sfondo
 ![Background](https://github.com/StartGame-PCTO/Game/blob/main/Image/Background.png)
 Tutti i labirinti

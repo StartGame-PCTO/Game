@@ -34,13 +34,13 @@ Schermata dove bisogna calibrare
 Vittoria
 ![Win](https://github.com/StartGame-PCTO/Game/blob/main/Image/Win.png)
 
-#Labirinti
+# Labirinti
 ![Lab1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab1.jpeg)
 ![Lab2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab2.png)
 ![Lab3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab3.png)
 ![Lab4](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab4.png)
 
-#Indovinelli
+# Indovinelli
 ![Riddle1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle1.png)
 ![Riddle2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle2.png)
 ![Riddle3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle3.png)

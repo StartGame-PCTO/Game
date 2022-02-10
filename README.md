@@ -1,19 +1,19 @@
 ![Logo](https://github.com/StartGame-PCTO/Game/blob/main/Image/Logo.png)
 # Idea
-Il nostro gioco ha come scopo la riabilitazione degli arti e la risoluzione di problemi matematici. Per far ciò abbiamo pensato ad un labirinto, nella quale il gamer, dovrà trovare l'uscita muovendo l'oggetto impugnato che farà muovere la pedina. Il programma, riconoscerà il colore ed una volta settato il centro il gioco avrà inizio. 
+Our game aims at rehabilitating the limbs and solving mathematical problems. To do this we have thought of a maze, in which the gamer will have to find the exit by moving the object held that will make the pawn move. The program will recognize the color and once the center is set the game will begin. 
 
 
 
 # Blue color detection
-Per il movimento della mano abbiamo usato la libreria openCV con il color detection, che ci permette di isolare il colore da noi scelto.
+For the hand movement we used the openCV library with color detection, which allows us to isolate the color of our choice.
 
 ![ColoreBlu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ColorDetection.png)
 
-Menù del gioco
+Game menu
 ![MenuGioco](https://github.com/StartGame-PCTO/Game/blob/main/Image/Menu.png)
 
-#  Oggetti e Grafica  
-Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.org/)
+#  Objects and Graphics  
+To make the graphics of the game we used [Aseprite](https://www.aseprite.org/)
 
 ![ButtonMenu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ButtonMenu.png)
 ![Next](https://github.com/StartGame-PCTO/Game/blob/main/Image/Next.png)
@@ -24,7 +24,7 @@ Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.
 ![X](https://github.com/StartGame-PCTO/Game/blob/main/Image/X.png)
 ![Ball1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ball1.png)
 
-Sfondo
+Background
 ![Background](https://github.com/StartGame-PCTO/Game/blob/main/Image/Background.png)
 Tutti i labirinti
 ![LabAll](https://github.com/StartGame-PCTO/Game/blob/main/Image/LabAll.png)
@@ -33,13 +33,13 @@ Schermata dove bisogna calibrare
 Vittoria
 ![Win](https://github.com/StartGame-PCTO/Game/blob/main/Image/Win.png)
 
-# Labirinti
+# Labyrinths
 ![Lab1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab1.jpeg)
 ![Lab2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab2.png)
 ![Lab3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab3.png)
 ![Lab4](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab4.png)
 
-# Indovinelli
+# Riddles
 ![Riddle1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle1.png)
 ![Riddle2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle2.png)
 ![Riddle3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle3.png)
@@ -48,10 +48,10 @@ Vittoria
 
 
 
-# Tecnologie utilizzate
-Gioco realizzato in Python con [pyGame](https://www.pygame.org/news) e [openCV](https://opencv.org).
-Disegno pixelArt: [Aseprite](https://www.aseprite.org)
+# Technologies used
+Game made in Python with [pyGame](https://www.pygame.org/news) and [openCV](https://opencv.org).
+Drawing pixelArt: [Aseprite](https://www.aseprite.org)
 
 
-# Componenti gruppo
+# Group components
 De Carlini Davide, Faggio Cristian, Cavaglieri Nicolò.

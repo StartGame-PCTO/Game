@@ -31,6 +31,21 @@ Tutti i labirinti
 ![LabAll](https://github.com/StartGame-PCTO/Game/blob/main/Image/LabAll.png)
 Schermata dove bisogna calibrare
 ![Calibration](https://github.com/StartGame-PCTO/Game/blob/main/Image/Calibration.png)
+Vittoria
+![Win](https://github.com/StartGame-PCTO/Game/blob/main/Image/Win.png)
+
+#Labirinti
+![Lab1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab1.jpeg)
+![Lab2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab2.png)
+![Lab3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab3.png)
+![Lab4](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lab4.png)
+
+#Indovinelli
+![Riddle1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle1.png)
+![Riddle2](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle2.png)
+![Riddle3](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle3.png)
+![Riddle4](https://github.com/StartGame-PCTO/Game/blob/main/Image/Riddle4.png)
+
 
 
 

@@ -9,15 +9,12 @@ Per il movimento della mano abbiamo usato la libreria openCV con il color detect
 
 ![ColoreBlu](https://github.com/NameNotFound-PCTO/Game/blob/main/code/color_dect_blue.jpeg)
 
-# Menù del gioco
+Menù del gioco
 ![MenuGioco](https://github.com/StartGame-PCTO/Game/blob/main/Image/Menu.png)
 
-Esempio di gioco in azione
-![esempioDiGioco]("esempioGame.png")
-
 #  Oggetti e Grafica  
-Per Disegnare gli oggetti e realizzare la grafica del videogioco Aseprite.
-Tutti questi oggetti sono delle pixelArt.
+Per realizzare la grafica del gioco si è usato Aseprite
+![Aseprite](https://www.aseprite.org/)
 
 
 

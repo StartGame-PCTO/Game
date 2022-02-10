@@ -15,14 +15,14 @@ Menù del gioco
 #  Oggetti e Grafica  
 Per realizzare la grafica del gioco si è usato [Aseprite](https://www.aseprite.org/)
 
-![Ball1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ball1.png)
 ![ButtonMenu](https://github.com/StartGame-PCTO/Game/blob/main/Image/ButtonMenu.png)
-![Lock](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lock.png)
 ![Next](https://github.com/StartGame-PCTO/Game/blob/main/Image/Next.png)
+![Start](https://github.com/StartGame-PCTO/Game/blob/main/Image/Start.png)
 ![No](https://github.com/StartGame-PCTO/Game/blob/main/Image/No.png)
 ![Ok](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ok.png)
-![Start](https://github.com/StartGame-PCTO/Game/blob/main/Image/Start.png)
+![Lock](https://github.com/StartGame-PCTO/Game/blob/main/Image/Lock.png)
 ![X](https://github.com/StartGame-PCTO/Game/blob/main/Image/X.png)
+![Ball1](https://github.com/StartGame-PCTO/Game/blob/main/Image/Ball1.png)
 
 Sfondo
 ![Background](https://github.com/StartGame-PCTO/Game/blob/main/Image/Background.png)

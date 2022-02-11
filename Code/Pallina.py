@@ -2,7 +2,7 @@ import pygame
 
 class Pallina():
     def __init__(self,x,y):
-        self.pallina = pygame.image.load("Image\Ball1.png")
+        self.pallina = pygame.image.load("Image\Ball3.png")
         self.centroX = x
         self.centroY = y
     

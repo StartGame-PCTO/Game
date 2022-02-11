@@ -1,6 +1,6 @@
 ![Logo](https://github.com/StartGame-PCTO/Game/blob/main/Image/Logo.png)
 # Idea
-Our game aims at rehabilitating the limbs and solving mathematical problems. To do this we have thought of a maze, in which the gamer will have to find the exit by moving the object held that will make the pawn move. The program will recognize the color and once the center is set the game will begin. 
+Our game aims at rehabilitating the limbs. To do this we have thought of a maze, in which the gamer will have to find the exit by moving the object held that will make the pawn move. The program will recognize the color and once the center is set the game will begin. 
 
 
 
